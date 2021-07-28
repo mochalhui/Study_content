@@ -47,3 +47,19 @@ foo('name','age','sex')
 
  func2('name', 'age')
  //总结： 传入的实参 会相互影响  形参 互不干扰 听不明白就看上面的代码
+
+ //函数间参数传递 这个例子虽然牵强 但是好理解
+ function a1(){
+     a2.apply(this,arguments);
+ }
+ function a2(a){
+     console.log(a);
+ }
+ a1(1)
+
+ //es6 ...运算符 轻松转成数组 其实是因为 arguments是Symbol(Symbol.iterator)所以她是可迭代的
+ function b(...arguments){
+     console.log(arguments);//[1,2,3,4]
+ }
+ b(1,2,3,4)
+
