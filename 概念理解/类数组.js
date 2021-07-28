@@ -45,3 +45,17 @@ Array.prototype.splice.call(arrLike,0);
 Array.from(arrLike);
 //4、apply
 Array.prototype.concat.apply([],arrLike);
+
+//类数组检测
+function isArrayLike(o) {
+    if (o &&                                // o is not null, undefined, etc.
+        typeof o === 'object' &&            // o is an object
+        isFinite(o.length) &&               // o.length is a finite number
+        o.length >= 0 &&                    // o.length is non-negative
+        o.length===Math.floor(o.length) &&  // o.length is an integer
+        o.length < 4294967296)              // o.length < 2^32
+        return true;                        // Then o is array-like
+    else
+        return false;                       // Otherwise it is not
+}
+
