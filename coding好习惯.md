@@ -11,3 +11,5 @@ ___
    
    ```
   4. 在nestjs中,可以使用`nest g user(自定义名称)` ，注意是在根目录，可以生产你想要的模块
+
+  5. 在node.js中，service中的变量记得`private`，防止被外部饮用更改（因为service都是export）
