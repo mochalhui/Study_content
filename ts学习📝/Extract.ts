@@ -1,0 +1,1 @@
+type MyExtract<T,K> = T extends K ? T : never;
